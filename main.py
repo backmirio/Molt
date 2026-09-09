@@ -35,6 +35,11 @@ while True:
                 snake_dir = (TILE_SIZE, 0)
                 dirs = {pg.K_z: 1, pg.K_s: 1, pg.K_q: 0, pg.K_d: 1}
     screen.fill('black')
+    for x in range(0, WINDOW, TILE_SIZE):
+        pg.draw.line(screen, (30, 30, 30), (x, 0), (x, WINDOW))
+
+    for y in range(0, WINDOW, TILE_SIZE):
+        pg.draw.line(screen, (30, 30, 30), (0, y), (WINDOW, y))
     #check borders and selfeating
     self_eating =  pg.Rect.collidelist(snake, segments[:-1]) != -1
     if snake.left < 0 or snake.right > WINDOW or snake.top < 0 or snake.bottom > WINDOW or self_eating:
