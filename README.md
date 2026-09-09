@@ -31,19 +31,23 @@ The game is inspired by the classic **Snake** gameplay while adding its own visu
 
 ## Features
 
+### Completed
+
+* [x] Pygame window
+* [x] Game loop
+* [x] Caterpillar display
+* [x] Caterpillar movement
+* [x] Screen boundaries
+* [x] Grid system
+* [x] Leaf spawning
+* [x] Leaf collection
+* [x] Caterpillar growth
+* [x] Body segment system
+* [x] Collision with the walls
+* [x] Collision with its own body
+
 ### Planned
 
-* [ ] Pygame window
-* [ ] Game loop
-* [ ] Caterpillar display
-* [ ] Caterpillar movement
-* [ ] Screen boundaries
-* [ ] Leaf spawning
-* [ ] Leaf collection
-* [ ] Caterpillar growth
-* [ ] Body segment system
-* [ ] Collision with the walls
-* [ ] Collision with its own body
 * [ ] Score system
 * [ ] Increasing difficulty
 * [ ] Game Over
@@ -57,7 +61,7 @@ The game is inspired by the classic **Snake** gameplay while adding its own visu
 
 ## Gameplay
 
-The main gameplay loop will be:
+The main gameplay loop is:
 
 **Move → Find a leaf → Eat it → Grow → Avoid your body → Repeat**
 
@@ -98,4 +102,6 @@ The project will be developed progressively, feature by feature.
 
 **Status:** In development
 
-The project has just been created. Gameplay development will begin after the completion of **Yellow**.
+The core gameplay of **Molt** is already functional.
+
+The next steps are to implement the **score system** and work on the **visual design** of the game.
