@@ -28,6 +28,8 @@ snake.center = get_random_position()
 
 length = 1
 
+score = 0
+
 segments = [snake.copy()]
 
 snake_dir = (0, 0)
@@ -56,11 +58,6 @@ dirs = {
 
 game_stat = "menu"
 
-
-# -------------------------
-# BOUTON
-# -------------------------
-
 play_button = pg.Rect(
     400,
     650,
@@ -69,10 +66,6 @@ play_button = pg.Rect(
 )
 
 
-# -------------------------
-# POLICES
-# -------------------------
-
 font_title = pg.font.Font(None, 120)
 
 font_button = pg.font.Font(None, 50)
@@ -80,19 +73,10 @@ font_button = pg.font.Font(None, 50)
 
 while True:
 
-    # -------------------------
-    # EVENTS
-    # -------------------------
-
     for event in pg.event.get():
 
         if event.type == pg.QUIT:
             exit()
-
-
-        # -------------------------
-        # MENU
-        # -------------------------
 
         if game_stat == "menu":
 
@@ -102,10 +86,6 @@ while True:
 
                     game_stat = "game"
 
-
-        # -------------------------
-        # JEU
-        # -------------------------
 
         if game_stat == "game":
 
@@ -158,17 +138,9 @@ while True:
                         pg.K_d: 1
                     }
 
-
-    # -------------------------
-    # MENU
-    # -------------------------
-
     if game_stat == "menu":
 
         screen.fill((15, 15, 15))
-
-
-        # Titre
 
         title = font_title.render(
             "MOLT",
@@ -181,9 +153,6 @@ while True:
         )
 
         screen.blit(title, title_rect)
-
-
-        # Bouton PLAY
 
         mouse_pos = pg.mouse.get_pos()
 
@@ -211,9 +180,6 @@ while True:
             4
         )
 
-
-        # Texte PLAY
-
         text = font_button.render(
             "PLAY",
             True,
@@ -229,17 +195,9 @@ while True:
             text_rect
         )
 
-
-    # -------------------------
-    # JEU
-    # -------------------------
-
     elif game_stat == "game":
 
         screen.fill('black')
-
-
-        # Grille
 
         for x in range(0, WINDOW, TILE_SIZE):
 
@@ -260,8 +218,18 @@ while True:
                 (WINDOW, y)
             )
 
+        font_score = pg.font.Font(None,40)
 
-        # Check borders and selfeating
+        score_text = font_score.render(
+            f"Score : {score}",
+            True,
+            (255, 255, 255)
+        )
+
+        screen.blit(
+            score_text,
+            (20, 20)
+        )
 
         self_eating = pg.Rect.collidelist(
             snake,
@@ -277,26 +245,18 @@ while True:
             or self_eating
         ):
 
-            snake.center, food.center = (
-                get_random_position(),
-                get_random_position()
-            )
-
+            snake.center, food.center = get_random_position(), get_random_position()
             length, snake_dir = 1, (0, 0)
-
+            score = 0
             segments = [snake.copy()]
-
-
-        # Check food
 
         if snake.center == food.center:
 
             food.center = get_random_position()
 
             length += 1
+            score += 10
 
-
-        # Draw food
 
         pg.draw.rect(
             screen,
@@ -304,8 +264,6 @@ while True:
             food
         )
 
-
-        # Draw snake
 
         for segment in segments:
 
@@ -315,8 +273,6 @@ while True:
                 segment
             )
 
-
-        # Move snake
 
         time_now = pg.time.get_ticks()
 
