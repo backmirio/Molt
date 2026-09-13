@@ -35,6 +35,7 @@ The game is inspired by the classic **Snake** gameplay while adding its own visu
 
 * [x] Pygame window
 * [x] Game loop
+* [x] Main menu
 * [x] Caterpillar display
 * [x] Caterpillar movement
 * [x] Screen boundaries
@@ -45,17 +46,19 @@ The game is inspired by the classic **Snake** gameplay while adding its own visu
 * [x] Body segment system
 * [x] Collision with the walls
 * [x] Collision with its own body
+* [x] Score system
+* [x] Game Over system
+* [x] Win condition
+* [x] Temporary game background
 
 ### Planned
 
-* [ ] Score system
 * [ ] Increasing difficulty
-* [ ] Game Over
 * [ ] Restart system
-* [ ] Main menu
 * [ ] Final visual identity
 * [ ] Sound effects
 * [ ] Music
+* [ ] Final pixel-art assets
 
 ---
 
@@ -65,7 +68,11 @@ The main gameplay loop is:
 
 **Move → Find a leaf → Eat it → Grow → Avoid your body → Repeat**
 
-The difficulty will increase as the caterpillar gets longer.
+The player earns points by collecting leaves.
+
+The game ends when the caterpillar collides with a wall or its own body.
+
+The player can also win by filling the entire game grid.
 
 ---
 
@@ -73,9 +80,12 @@ The difficulty will increase as the caterpillar gets longer.
 
 ```text
 Molt/
+
 ├── main.py
 ├── README.md
 └── assets/
+    ├── background_game.png
+    └── ...
 ```
 
 ---
@@ -94,7 +104,7 @@ The goal of **Molt** is to create a small but complete arcade game while improvi
 * Git and GitHub
 * Pixel art
 
-The project will be developed progressively, feature by feature.
+The project is developed progressively, feature by feature.
 
 ---
 
@@ -102,6 +112,8 @@ The project will be developed progressively, feature by feature.
 
 **Status:** In development
 
-The core gameplay of **Molt** is already functional.
+The core gameplay of **Molt** is functional.
 
-The next steps are to implement the **score system** and work on the **visual design** of the game.
+The current version includes the main menu, caterpillar movement and growth, leaf collection, collision systems, score, Game Over, a win condition and a temporary game background.
+
+The next steps are to improve the difficulty, add the final visual identity and implement sound effects and music.
