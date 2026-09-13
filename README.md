@@ -50,11 +50,11 @@ The game is inspired by the classic **Snake** gameplay while adding its own visu
 * [x] Game Over system
 * [x] Win condition
 * [x] Temporary game background
+* [x] Increasing difficulty
+* [x] Restart system
 
 ### Planned
 
-* [ ] Increasing difficulty
-* [ ] Restart system
 * [ ] Final visual identity
 * [ ] Sound effects
 * [ ] Music
